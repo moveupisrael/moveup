@@ -26,13 +26,13 @@ export default function GoogleAnalytics() {
       />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-ZE52X70Z57');
-        `}
-      </Script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+          
+                    gtag('config', 'G-ZE52X70Z57');
+                    gtag('config', 'AW-17817974748');
+                  `}</Script>
     </>
   );
 }
