@@ -129,7 +129,7 @@ function LeadPopupContent() {
         // Google Ads Conversion Tracking
         if (typeof window !== "undefined" && (window as any).gtag) {
           (window as any).gtag("event", "conversion", {
-            send_to: "AW-17817974748/REPLACE_ME_WITH_LABEL" // TODO: User needs to replace 'REPLACE_ME_WITH_LABEL' with the actual label from Google Ads
+            send_to: "AW-17817974748/YAt8CL6thdUbENzvorBC"
           });
         }
         toast.success("🚀 תודה! נצור איתך קשר בהקדם.", { position: "top-center" });
