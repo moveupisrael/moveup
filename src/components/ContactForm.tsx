@@ -240,16 +240,13 @@ export default function ContactForm() {
                   id="contact-terms" 
                   checked={isAgreed}
                   onCheckedChange={(checked) => setIsAgreed(checked as boolean)}
-                  className="mt-1 border-gray-500 data-[state=checked]:bg-[#FF3B3B] data-[state=checked]:border-[#FF3B3B]"
+                  className="mt-0.5 border-gray-500 data-[state=checked]:bg-[#FF3B3B] data-[state=checked]:border-[#FF3B3B]"
                 />
                 <label 
                   htmlFor="contact-terms" 
-                  className="text-sm text-gray-400 leading-tight cursor-pointer select-none"
+                  className="text-[11px] text-gray-400 leading-tight cursor-pointer select-none text-right"
                 >
-                  אני מאשר/ת קבלת עדכונים מ-MoveUP בהתאם ל
-                  <Link href="/privacy-policy" target="_blank" className="text-[#FF3B3B] hover:underline mx-1">
-                    מדיניות הפרטיות
-                  </Link>
+                  אני מאשר/ת כי מסירת הפרטים תלויה ברצוני ובהסכמתי בלבד (לא חלה חובה חוקית). ידוע לי כי המידע יישמר במאגר החברה, ישמש ליצירת קשר, דיוור ותפעול שירות, ועשוי להיות מועבר לספקי שירות טכנולוגיים (כגון Make/WhatsApp) לצורך כך. עומדת לרשותי זכות העיון במידע וזכות לבקש את תיקונו לפי חוק הגנת הפרטיות ולפי <Link href="/privacy-policy" className="text-[#FF3B3B] hover:underline mx-1 relative z-10" onClick={(e) => e.stopPropagation()}>מדיניות הפרטיות</Link>.
                 </label>
               </div>
 

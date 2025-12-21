@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Cookie, X, Settings, Shield, Eye } from "lucide-react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 interface CookiePreferences {
   necessary: boolean;
@@ -17,8 +18,8 @@ export default function CookieConsent() {
   const [showSettings, setShowSettings] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
     necessary: true, // Always enabled
-    analytics: true,
-    marketing: true,
+    analytics: false,
+    marketing: false,
     accessibility: true,
   });
 
@@ -101,7 +102,7 @@ export default function CookieConsent() {
                     <span className="text-sm font-bold text-white">עוגיות</span>
                   </div>
                   <p className="text-xs text-gray-400 leading-tight line-clamp-2 md:line-clamp-none">
-                    אנו משתמשים בעוגיות לשיפור החוויה שלך.
+                    אנו משתמשים בעוגיות לשיפור החוויה שלך. למידע נוסף: <Link href="/privacy-policy" className="underline hover:text-[#FF3B3B]">מדיניות פרטיות</Link>.
                   </p>
                   <button 
                     onClick={() => setShowSettings(true)}
@@ -123,16 +124,16 @@ export default function CookieConsent() {
                   <Button
                     onClick={handleAcceptAll}
                     size="sm"
-                    className="h-8 px-4 bg-[#FF3B3B] hover:bg-[#FF3B3B]/90 text-white text-xs font-bold rounded-lg transition-all shadow-[0_0_10px_rgba(255,59,59,0.2)]">
-                    אשר
+                    className="h-8 px-3 bg-[#FF3B3B] hover:bg-[#FF3B3B]/90 text-white text-xs font-bold rounded-lg transition-all shadow-[0_0_10px_rgba(255,59,59,0.2)]">
+                    אשר הכל
                   </Button>
                   
                   <Button
                     onClick={handleRejectAll}
-                    variant="ghost"
-                    size="icon"
-                    className="h-8 w-8 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg">
-                    <X className="w-4 h-4" />
+                    variant="outline"
+                    size="sm"
+                    className="h-8 px-3 bg-transparent border-white/20 text-gray-300 hover:text-white hover:bg-white/10 text-xs font-normal rounded-lg">
+                    דחה הכל
                   </Button>
                 </div>
               </div>
@@ -171,7 +172,7 @@ export default function CookieConsent() {
                 {/* Content */}
                 <div className="p-4 overflow-y-auto space-y-3 custom-scrollbar">
                   <p className="text-sm text-gray-400 mb-4">
-                    בחרו אילו עוגיות תרצו לאשר. עוגיות חיוניות תמיד פעילות.
+                    בחרו אילו עוגיות תרצו לאשר. לפרטים נוספים עיינו ב<Link href="/privacy-policy" className="text-[#FF3B3B] hover:underline">מדיניות הפרטיות</Link>. עוגיות חיוניות תמיד פעילות.
                   </p>
 
                   {/* Options */}
@@ -210,17 +211,23 @@ export default function CookieConsent() {
                 </div>
 
                 {/* Footer */}
-                <div className="p-4 border-t border-white/10 bg-[#151B2E] flex gap-3">
+                <div className="p-4 border-t border-white/10 bg-[#151B2E] flex gap-3 flex-wrap">
                    <Button
                     onClick={handleSavePreferences}
-                    className="flex-1 bg-[#FF3B3B] hover:bg-[#FF3B3B]/90 text-white h-10 rounded-lg text-sm">
+                    className="flex-1 bg-[#FF3B3B] hover:bg-[#FF3B3B]/90 text-white h-10 rounded-lg text-sm min-w-[100px]">
                     שמור בחירות
                   </Button>
                   <Button
                     onClick={handleAcceptAll}
                     variant="outline"
-                    className="flex-1 bg-transparent border-white/20 text-white hover:bg-white/5 h-10 rounded-lg text-sm">
+                    className="flex-1 bg-transparent border-white/20 text-white hover:bg-white/5 h-10 rounded-lg text-sm min-w-[100px]">
                     אשר הכל
+                  </Button>
+                  <Button
+                    onClick={handleRejectAll}
+                    variant="ghost"
+                    className="flex-1 text-gray-400 hover:text-white hover:bg-white/5 h-10 rounded-lg text-sm min-w-[100px]">
+                    דחה הכל
                   </Button>
                 </div>
 

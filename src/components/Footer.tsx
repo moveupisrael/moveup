@@ -13,10 +13,10 @@ const footerLinks = {
   { name: "צור קשר", href: "#contact-form" }],
 
   legal: [
+  { name: "מדיניות פרטיות", href: "/privacy-policy" },
   { name: "תנאי שימוש", href: "/terms" },
   { name: "מדיניות החזרים", href: "/refund-policy" },
-  { name: "הצהרת נגישות", href: "/accessibility-statement" },
-  { name: "שאלות ותשובות", href: "/faq" }],
+  { name: "הצהרת נגישות", href: "/accessibility-statement" }],
 
   support: [
   { name: "מרכז תמיכה", href: "#contact-form" },
