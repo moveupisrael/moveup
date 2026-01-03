@@ -91,8 +91,6 @@ export const faqCategories: FAQCategory[] = [
     question: "אם הגרריסט מאחר?",
     answer: `אם גרריסט אישר קריאה וביטל או איחר ללא סיבה מוצדקת 
 המערכת מחפשת מיד גרריסט אחר, והדירוג שלו נפגע כדי למנוע מקרים כאלה בעתיד.`
-
-."
   },
   {
     question: "האם אפשר להשתמש בנקודות לקריאות נוספות?",
@@ -166,6 +164,7 @@ export const faqCategories: FAQCategory[] = [
 
 
 }];
+
 
 
 
