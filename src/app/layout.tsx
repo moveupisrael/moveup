@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     apple: '/icon.png',
   },
   openGraph: {
-    title: "MoveUP - אפליקציית גרירות וגרר לאופנועים",
-    description: "נתקעתם? הזמינו גרר לאופנועים או תיקון דרך בקליק דרך אפליקציית MoveUP. שירות מהיר 24/7.",
+    title: "MoveUP - אפליקציית שירותי דרך וגרירה לאופנועים",
+    description: "נתקעתם? הזמינו שירות דרך או גרירה בקליק דרך אפליקציית MoveUP. שירות מהיר 24/7.",
     type: "website",
     locale: "he_IL",
   }
@@ -116,7 +116,7 @@ window.interdeal = {
                   "name": "MoveUP",
                   "applicationCategory": "UtilitiesApplication",
                   "operatingSystem": "iOS, Android",
-                  "description": "אפליקציית גרירות מהירה להזמנת גרר לאופנועים ושירותי דרך בקליק.",
+                  "description": "אפליקציית גרירות מהירה להזמנת שירותי דרך וגרירה בקליק.",
                   "offers": {
                     "@type": "Offer",
                     "price": "0",
@@ -165,5 +165,6 @@ window.interdeal = {
         <VisualEditsMessenger />
       </body>
     </html>);
+
 
 }
