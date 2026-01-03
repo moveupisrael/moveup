@@ -26,8 +26,8 @@ export const faqCategories: FAQCategory[] = [
   },
   {
     question: "מה זה MoveUp בכלל?",
-    answer: "MoveUp היא פלטפורמה חכמה לגרירה ושירותי דרך
-`.שנועדה לפתור את הרגע שכולנו מכירים
+    answer: `MoveUp היא פלטפורמה חכמה לגרירה ושירותי דרך
+.שנועדה לפתור את הרגע שכולנו מכירים
 אתה נתקע, בלחץ, לא תמיד יודע למי להתקשר,
 ולפעמים גם מחכה יותר מדי זמן.
 
@@ -166,5 +166,6 @@ export const faqCategories: FAQCategory[] = [
 
 
 }];
+
 
 
