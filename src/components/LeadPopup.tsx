@@ -216,7 +216,7 @@ function LeadPopupContent() {
                       : "bg-[#151B2E] border-transparent hover:border-[#FF3B3B]/30 text-gray-400 hover:bg-[#FF3B3B]/5"
                   }`}>
                   <Bike className={`w-5 h-5 ${formData.userType === "Vehicle Owner" ? "text-[#FF3B3B]" : "text-gray-500"}`} />
-                  <span className="text-xs font-bold">אני אופנוען</span>
+                  <span className="text-xs font-bold">אני לקוח</span>
                 </button>
               </div>
 
