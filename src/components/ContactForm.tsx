@@ -25,7 +25,7 @@ export default function ContactForm() {
     e.preventDefault();
     
     if (!formData.userType) {
-      toast.error("אנא בחר סוג משתמש (גרריסט או אופנוען)", {
+      toast.error("אנא בחר סוג משתמש (גרריסט או לקוח)", {
         duration: 4000,
         position: "top-center"
       });
@@ -154,7 +154,7 @@ export default function ContactForm() {
                         : "bg-[#0B0F1A]/50 border-[#FF3B3B]/30 text-gray-300 hover:bg-[#FF3B3B]/10"
                     }`}
                   >
-                    אני אופנוען
+                    אני לקוח
                   </button>
                 </div>
               </div>
