@@ -114,7 +114,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-xl md:text-2xl text-gray-300 mb-4 font-medium">
-            גרירה מהירה • ביטוח מלא • מחיר שקוף
+            גרירה מהירה • ביטחון מלא • מחיר שקוף
           </motion.p>
 
           {/* Download Buttons */}
@@ -154,7 +154,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base text-gray-300">
             <div className="px-4 py-2 bg-white/5 rounded-full border border-[#FF3B3B]/30">
-              <span>ביטוח מלא כלול</span>
+              <span>מחיר הוגן</span>
             </div>
             <div className="px-4 py-2 bg-white/5 rounded-full border border-[#FF3B3B]/30">
               <span>שירות 24/7</span>
@@ -206,5 +206,6 @@ export default function HeroSection() {
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0B0F1A] to-transparent z-5 pointer-events-none" />
     </section>);
+
 
 }
