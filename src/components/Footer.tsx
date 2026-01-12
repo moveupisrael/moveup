@@ -14,8 +14,7 @@ const footerLinks = {
 
   legal: [
   { name: "מדיניות פרטיות", href: "/privacy-policy" },
-  { name: "תנאי שימוש", href: "/terms" },
-  { name: "מדיניות החזרים", href: "/refund-policy" },
+  { name: "תנאי שימוש ומדיניות ביטולים", href: "/refund-policy" },
   { name: "הצהרת נגישות", href: "/accessibility-statement" }],
 
   support: [
