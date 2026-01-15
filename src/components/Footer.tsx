@@ -20,6 +20,7 @@ const footerLinks = {
   support: [
   { name: "מרכז תמיכה", href: "#contact-form" },
   { name: "שירות לקוחות 24/7", href: "#contact-form" },
+  { name: "שאלות ותשובות", href: "/faq" },
   { name: "איך זה עובד", href: "#how-it-works" }]
 
 };
