@@ -168,10 +168,10 @@ export default function FAQ() {
                 לא מצאת את מה שחיפשת?
               </h3>
               <p className="text-gray-400 text-base md:text-lg mb-6">
-                צוות התמיכה שלנו זמין 24/7 לענות על כל שאלה
+                צוות התמיכה שלנו זמין בוואטסאפ 24/7 לענות על כל שאלה
               </p>
               <motion.a
-                href="/#contact-form"
+                href="https://api.whatsapp.com/send/?phone=972557714690&text&type=phone_number&app_absent=0"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#FF3B3B] to-[#CC2E2E] text-white font-bold rounded-full shadow-xl shadow-[#FF3B3B]/50 hover:shadow-2xl hover:shadow-[#FF3B3B]/60 transition-all duration-300">
