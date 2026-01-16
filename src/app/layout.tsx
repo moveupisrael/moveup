@@ -8,10 +8,19 @@ import { Toaster } from "@/components/ui/sonner";
 import LeadPopup from "@/components/LeadPopup";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://moveeup.co.il"),
   title: "MoveUP - אפליקציית גרירות | גרר לאופנועים | תיקון דרך",
   description: "MoveUP היא אפליקציית גרירות מהירה לאופנועים. הזמינו גרר לאופנועים, תיקון דרך לאופנועים ושירותי חילוץ בקליק. זמינות 24/7, מחיר שקוף והגעה מהירה.",
   keywords: ["אפליקציית גרירות", "גרר", "גרר לאופנועים", "תיקון דרך לאופנועים", "גרירת אופנועים", "שירותי דרך לאופנועים", "חילוץ אופנועים", "גרר אופנוע", "תיקון פנצ'ר לאופנוע"],
   authors: [{ name: "MoveUP Team" }],
+  icons: {
+    icon: [
+      { url: "/icon.png" },
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "MoveUP - אפליקציית שירותי דרך וגרירה לאופנועים",
     description: "נתקעתם? הזמינו שירות דרך או גרירה בקליק דרך אפליקציית MoveUP. שירות מהיר 24/7.",
