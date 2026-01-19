@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Loader2, Trash2, CheckCircle, AlertCircle } from "lucide-react";
+import { Loader2, MailMinus, CheckCircle, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -58,11 +58,11 @@ export default function UnsubscribePage() {
           <Card className="bg-[#111625] border-[#FF3B3B]/20 shadow-[0_0_40px_rgba(255,59,59,0.05)]">
             <CardHeader className="text-center pb-2">
               <div className="mx-auto w-12 h-12 bg-[#FF3B3B]/10 rounded-full flex items-center justify-center mb-4 text-[#FF3B3B]">
-                <Trash2 size={24} />
+                <MailMinus size={24} />
               </div>
-              <CardTitle className="text-2xl font-bold text-white">מחיקת פרטים והסרה</CardTitle>
-              <CardDescription className="text-gray-400 text-base">
-                הזן את כתובת האימייל או הטלפון שלך כדי למחוק את פרטיך מהמערכת.
+              <CardTitle className="text-2xl font-bold text-white">כבר עוזבים?</CardTitle>
+              <CardDescription className="text-gray-400 text-base mt-2">
+                אנחנו מבינים. הזינו את הפרטים שלכם כדי להסיר את עצמכם מרשימת התפוצה שלנו.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -75,9 +75,9 @@ export default function UnsubscribePage() {
                   <div className="mx-auto w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mb-3 text-green-500">
                     <CheckCircle size={24} />
                   </div>
-                  <h3 className="text-lg font-semibold text-green-500 mb-1">הבקשה התקבלה בהצלחה</h3>
+                  <h3 className="text-lg font-semibold text-green-500 mb-1">הבקשה התקבלה</h3>
                   <p className="text-sm text-gray-300">
-                    פרטיך ימחקו מהמערכת בהקדם האפשרי.
+                    הוסרת בהצלחה מרשימת התפוצה שלנו. לא נשלח לך יותר מיילים שיווקיים.
                   </p>
                 </motion.div>
               ) : (
@@ -85,19 +85,19 @@ export default function UnsubscribePage() {
                   <div className="space-y-2">
                     <Input
                       type="text"
-                      placeholder="אימייל או מספר טלפון"
+                      placeholder="הכנס אימייל או מספר טלפון"
                       required
                       value={identifier}
                       onChange={(e) => setIdentifier(e.target.value)}
-                      className="bg-[#0B0F1A] border-[#FF3B3B]/20 text-white placeholder:text-gray-600 focus-visible:ring-[#FF3B3B]/50 h-12"
+                      className="bg-[#0B0F1A] border-[#FF3B3B]/20 text-white placeholder:text-gray-500 focus-visible:ring-[#FF3B3B]/50 h-12 text-right"
                     />
                   </div>
 
-                  <Alert variant="destructive" className="bg-[#FF3B3B]/5 border-[#FF3B3B]/20 text-[#FF3B3B]">
-                    <AlertCircle className="h-4 w-4" />
-                    <AlertTitle className="mr-2 font-bold text-sm">שים לב</AlertTitle>
-                    <AlertDescription className="mr-6 text-xs text-gray-400">
-                      הפעולה תמחק את כל פרטיך מהמערכת לצמיתות ולא ניתן יהיה לשחזר אותם.
+                  <Alert className="bg-[#1A202C] border-none text-gray-300">
+                    <Info className="h-4 w-4 text-[#FF3B3B]" />
+                    <AlertTitle className="mr-2 font-bold text-sm text-white">חשוב לדעת</AlertTitle>
+                    <AlertDescription className="mr-6 text-xs text-gray-400 leading-relaxed">
+                      פעולה זו תסיר אותך רק מרשימת התפוצה והעדכונים שלנו. החשבון שלך באפליקציה והמידע האישי שלך יישארו ללא שינוי.
                     </AlertDescription>
                   </Alert>
 
@@ -118,15 +118,15 @@ export default function UnsubscribePage() {
                         מעבד בקשה...
                       </>
                     ) : (
-                      "מחק אותי"
+                      "הסר אותי מהרשימה"
                     )}
                   </Button>
                 </form>
               )}
             </CardContent>
             <CardFooter className="justify-center pt-2 pb-6">
-              <p className="text-xs text-gray-600">
-                MoveUp - גרירה מהירה, בטוחה ובמחיר שקוף
+              <p className="text-xs text-gray-600 text-center">
+                תמיד אפשר להירשם מחדש אם תתחרטו :)
               </p>
             </CardFooter>
           </Card>
