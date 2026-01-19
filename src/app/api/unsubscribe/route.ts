@@ -5,15 +5,20 @@ const MAKE_WEBHOOK_URL = "https://hook.eu1.make.com/8kqxwxr5ucek7hl6n6o8ebos0gpv
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { email } = body as { email: string };
+    const { identifier } = body as { identifier: string };
 
-    if (!email) {
-      return NextResponse.json({ error: "Email is required" }, { status: 400 });
+    if (!identifier) {
+      return NextResponse.json({ error: "Email or phone is required" }, { status: 400 });
     }
 
+    const isEmail = identifier.includes("@");
+    
     // Construct the payload for Make.com
+    // We send both keys to ensure the schema is compatible with the general 'lead' structure,
+    // allowing the Make router to inspect either field.
     const makePayload = {
-      site_email: email,
+      site_email: isEmail ? identifier : "",
+      site_phone: !isEmail ? identifier : "",
       request_type: "delete_user"
     };
 
@@ -27,8 +32,6 @@ export async function POST(request: NextRequest) {
 
     if (!makeResponse.ok) {
       console.error('⚠️ Make.com webhook failed:', makeResponse.statusText);
-      // We might still want to return success to the user if the request was accepted/queued,
-      // but here we'll return an error if the webhook explicitly fails.
       return NextResponse.json({ error: "Failed to process request" }, { status: 502 });
     }
 

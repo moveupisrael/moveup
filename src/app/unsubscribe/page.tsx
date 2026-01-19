@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function UnsubscribePage() {
-  const [email, setEmail] = useState("");
+  const [identifier, setIdentifier] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -23,7 +23,7 @@ export default function UnsubscribePage() {
       const res = await fetch("/api/unsubscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ identifier }),
       });
 
       const data = await res.json();
@@ -33,7 +33,7 @@ export default function UnsubscribePage() {
       }
 
       setIsSuccess(true);
-      setEmail("");
+      setIdentifier("");
     } catch (err: any) {
       setError("אירעה שגיאה בעת שליחת הבקשה. אנא נסה שנית מאוחר יותר.");
     } finally {
@@ -62,7 +62,7 @@ export default function UnsubscribePage() {
               </div>
               <CardTitle className="text-2xl font-bold text-white">מחיקת פרטים והסרה</CardTitle>
               <CardDescription className="text-gray-400 text-base">
-                הזן את כתובת האימייל שלך כדי למחוק את פרטיך מהמערכת.
+                הזן את כתובת האימייל או הטלפון שלך כדי למחוק את פרטיך מהמערכת.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -84,11 +84,11 @@ export default function UnsubscribePage() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-2">
                     <Input
-                      type="email"
-                      placeholder="name@example.com"
+                      type="text"
+                      placeholder="אימייל או מספר טלפון"
                       required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      value={identifier}
+                      onChange={(e) => setIdentifier(e.target.value)}
                       className="bg-[#0B0F1A] border-[#FF3B3B]/20 text-white placeholder:text-gray-600 focus-visible:ring-[#FF3B3B]/50 h-12"
                     />
                   </div>
