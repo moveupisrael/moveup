@@ -126,12 +126,6 @@ function LeadPopupContent() {
       const data = await response.json();
 
       if (response.ok) {
-        // Google Ads Conversion Tracking
-        if (typeof window !== "undefined" && (window as any).gtag) {
-          (window as any).gtag("event", "conversion", {
-            send_to: "AW-17817974748/YAt8CL6thdUbENzvorBC"
-          });
-        }
         toast.success("🚀 תודה! נצור איתך קשר בהקדם.", { position: "top-center" });
         localStorage.setItem(SUBMITTED_KEY, "true"); // Mark as permanently submitted
         setIsOpen(false);
