@@ -128,11 +128,24 @@ function LeadPopupContent() {
       if (response.ok) {
         toast.success("🚀 תודה! נצור איתך קשר בהקדם.", { position: "top-center" });
 
-        // Track Google Ads conversion
+        // Track Google Ads conversion using the exact function from Google
         if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'conversion', {
-            'send_to': 'AW-17817974748/NiWLCIirxuobENzvorBC'
-          });
+          const gtag_report_conversion = (url?: string) => {
+            const callback = function () {
+              if (typeof(url) != 'undefined') {
+                window.location.href = url;
+              }
+            };
+            (window as any).gtag('event', 'conversion', {
+              'send_to': 'AW-17817974748/NiWLCIirxuobENzvorBC',
+              'value': 1.0,
+              'currency': 'ILS',
+              'event_callback': callback
+            });
+            return false;
+          };
+
+          gtag_report_conversion();
         }
 
         localStorage.setItem(SUBMITTED_KEY, "true"); // Mark as permanently submitted
