@@ -103,6 +103,26 @@ export default function ContactForm() {
     const cleanPhone = phone.replace(/[^\d]/g, "");
     const whatsappUrl = `https://wa.me/972${cleanPhone.startsWith("0") ? cleanPhone.slice(1) : cleanPhone}`;
 
+    // Track Google Ads conversion for WhatsApp
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      const gtag_report_conversion = (url?: string) => {
+        const callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location.href = url;
+          }
+        };
+        (window as any).gtag('event', 'conversion', {
+          'send_to': 'AW-17817974748/HnNfCOLXyOobENzvorBC',
+          'value': 1.0,
+          'currency': 'ILS',
+          'event_callback': callback
+        });
+        return false;
+      };
+
+      gtag_report_conversion();
+    }
+
     // Handle iframe compatibility
     const isInIframe = window.self !== window.top;
     if (isInIframe) {

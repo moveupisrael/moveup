@@ -10,6 +10,30 @@ export default function JoinWaitlistPage() {
   const message = encodeURIComponent("היי MoveUp, אשמח לקבל עדכון כשהאפליקציה עולה לאוויר!");
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
 
+  const handleWhatsAppClick = () => {
+    // Track Google Ads conversion for WhatsApp
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      const gtag_report_conversion = (url?: string) => {
+        const callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location.href = url;
+          }
+        };
+        (window as any).gtag('event', 'conversion', {
+          'send_to': 'AW-17817974748/HnNfCOLXyOobENzvorBC',
+          'value': 1.0,
+          'currency': 'ILS',
+          'event_callback': callback
+        });
+        return false;
+      };
+
+      gtag_report_conversion();
+    }
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-[#0B0F1A] text-white px-4 relative overflow-hidden">
       {/* Background Effects */}
@@ -40,13 +64,11 @@ export default function JoinWaitlistPage() {
             className="inline-block"
           >
             <Button
-              asChild
-              className="bg-[#25D366] hover:bg-[#25D366]/90 text-white text-lg px-8 py-8 md:px-10 md:py-8 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] transition-all duration-300 border border-[#25D366]/50"
+              onClick={handleWhatsAppClick}
+              className="bg-[#25D366] hover:bg-[#25D366]/90 text-white text-lg px-8 py-8 md:px-10 md:py-8 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] transition-all duration-300 border border-[#25D366]/50 flex items-center gap-3"
             >
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
-                <FaWhatsapp className="w-7 h-7" />
-                <span className="font-semibold">עדכנו אותי בוואטסאפ</span>
-              </a>
+              <FaWhatsapp className="w-7 h-7" />
+              <span className="font-semibold">עדכנו אותי בוואטסאפ</span>
             </Button>
           </motion.div>
         </motion.div>

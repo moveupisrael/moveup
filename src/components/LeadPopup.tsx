@@ -84,7 +84,29 @@ function LeadPopupContent() {
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("היי, אשמח לשמוע פרטים נוספים על ההצטרפות ל-MoveUP 🚀");
-    window.open(`https://wa.me/972557714690?text=${message}`, "_blank");
+    const whatsappUrl = `https://wa.me/972557714690?text=${message}`;
+
+    // Track Google Ads conversion for WhatsApp
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      const gtag_report_conversion = (url?: string) => {
+        const callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location.href = url;
+          }
+        };
+        (window as any).gtag('event', 'conversion', {
+          'send_to': 'AW-17817974748/HnNfCOLXyOobENzvorBC',
+          'value': 1.0,
+          'currency': 'ILS',
+          'event_callback': callback
+        });
+        return false;
+      };
+
+      gtag_report_conversion();
+    }
+
+    window.open(whatsappUrl, "_blank");
   };
 
   const handlePolicyClick = (e: React.MouseEvent) => {
