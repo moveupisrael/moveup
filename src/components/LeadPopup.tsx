@@ -127,6 +127,14 @@ function LeadPopupContent() {
 
       if (response.ok) {
         toast.success("🚀 תודה! נצור איתך קשר בהקדם.", { position: "top-center" });
+
+        // Track Google Ads conversion
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('event', 'conversion', {
+            'send_to': 'AW-17817974748/NiWLCIirxuobENzvorBC'
+          });
+        }
+
         localStorage.setItem(SUBMITTED_KEY, "true"); // Mark as permanently submitted
         setIsOpen(false);
       } else {

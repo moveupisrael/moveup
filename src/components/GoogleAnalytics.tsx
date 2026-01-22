@@ -51,6 +51,7 @@ export default function GoogleAnalytics() {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-ZE52X70Z57');
+          gtag('config', 'AW-17817974748');
         `}
       </Script>
     </>
