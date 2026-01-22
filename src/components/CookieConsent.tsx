@@ -63,7 +63,17 @@ export default function CookieConsent() {
   const savePreferences = (prefs: CookiePreferences) => {
     localStorage.setItem("cookie-consent", JSON.stringify(prefs));
     localStorage.setItem("cookie-consent-date", new Date().toISOString());
-    
+
+    // Update Google Consent Mode
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('consent', 'update', {
+        'analytics_storage': prefs.analytics ? 'granted' : 'denied',
+        'ad_storage': prefs.analytics ? 'granted' : 'denied',
+        'ad_user_data': prefs.analytics ? 'granted' : 'denied',
+        'ad_personalization': prefs.marketing ? 'granted' : 'denied'
+      });
+    }
+
     // Apply accessibility preferences
     if (prefs.accessibility) {
       document.documentElement.setAttribute("data-accessibility-enabled", "true");
