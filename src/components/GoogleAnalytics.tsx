@@ -29,8 +29,8 @@ export default function GoogleAnalytics() {
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
-          
-                    gtag('config', 'AW-17817974748');
+
+                    gtag('config', 'G-ZE52X70Z57');
                   `}</Script>
     </>
   );
